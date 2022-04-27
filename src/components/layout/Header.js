@@ -37,6 +37,11 @@ export default function Header() {
             <MenuButton item={item} key={index} />
           )
         )}
+        <HamburgerWrapper>
+          <MenuButton
+            item={{ title: "", icon: "/images/icons/hamburger.svg", link: "" }}
+          />
+        </HamburgerWrapper>
       </MenuWrapper>
       {/* This is the tooltip, and it receives the prop isOpen to toggle visibility */}
       <MenuTooltip isOpen={isOpen} />
@@ -45,17 +50,39 @@ export default function Header() {
 }
 const Wrapper = styled.div`
   position: absolute;
-  top: 50px;
+  top: 60px;
   display: grid;
   grid-template-columns: 44px auto;
   width: 100%;
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
+
+  @media (max-width: 850px) {
+    top: 30px;
+  }
+
+  @media (max-width: 450px) {
+    top: 20px;
+    padding: 0 20px;
+  }
 `
 const MenuWrapper = styled.div`
   display: grid;
   gap: 30px;
   /* dinamically repete the columns with as much content as it's added */
   grid-template-columns: repeat(${props => props.count}, auto);
+  @media (max-width: 850px) {
+    > a {
+      display: none;
+    }
+    grid-template-columns: auto;
+  }
+`
+const HamburgerWrapper = styled.div`
+  display: none;
+
+  @media (max-width: 850px) {
+    display: block;
+  }
 `
