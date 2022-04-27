@@ -3,9 +3,10 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 export default function MenuButton(props) {
+  // destructuring the item prop
   const { item } = props
   return (
-    <Link to={item.link}>
+    <Link to={item.link} onClick={props.onClick}>
       <MenuItem title={item.title}>
         <img src={item.icon} alt={item.title} />
         {item.title}
@@ -18,6 +19,7 @@ const MenuItem = styled.div`
   color: rgba(255, 255, 255, 0.7);
   display: grid;
   grid-template-columns: 24px auto;
+  /* insert a gap only if there's a title with it */
   gap: ${props => (props.title ? "10px" : "0px")};
   align-items: center;
   padding: 10px;

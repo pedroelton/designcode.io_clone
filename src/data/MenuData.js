@@ -1,3 +1,4 @@
+// The data of the items in the menu
 export const menuData = [
   {
     title: "Courses",
@@ -23,5 +24,23 @@ export const menuData = [
     title: "",
     icon: "/images/icons/account.svg",
     link: "/account",
+  },
+]
+// The data inside the tooltip
+export const tooltipData = [
+  {
+    title: "Profile",
+    icon: "/images/icons/profile.svg",
+    link: "/profile",
+  },
+  {
+    title: "Settings",
+    icon: "/images/icons/settings.svg",
+    link: "/settings",
+  },
+  {
+    title: "Sign out",
+    icon: "/images/icons/signout.svg",
+    link: "/logout",
   },
 ]
